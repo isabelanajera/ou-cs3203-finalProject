@@ -38,14 +38,9 @@ const path = require('path');
 
 const PORT = process.env.PORT || 3000
 
-const intialRoute = require("./routes/initial")
-const loginRoute = require("./routes/login")
-
 //var connection = new ActiveXObject("ADODB.Connection");
 
 app.use(express.static(__dirname));
-app.use("/initial", intialRoute)
-//app.use("/login", loginRoute)
 
 /*
 const sql = require('mssql');
