@@ -89,11 +89,11 @@ app.post("/", (req, res) => {
 //The port the app will listen on
 app.listen(PORT, () => console.log(`server running on port ${PORT}`))
 
-app.get("/index", (req, res) => {
-  res.sendFile(path.join(__dirname, '/projects/index.html'))
+app.get("/signup", (req, res) => {
+  res.sendFile(path.join(__dirname, '/projects/signup.html'))
 })
 
-app.post("/index", (req, res) => {
+app.post("/signup", (req, res) => {
   const email = req.body.name
   const password = req.body.password
   users.push(email)
@@ -113,14 +113,18 @@ app.post("/login", (req, res) => {
     res.sendFile(path.join(__dirname, '/projects/login.html'))
   }
   });
-  app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, '/projects/login.html'))
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, '/projects/login.html'))
     //res.send("<html> <head>server Response</head><body><h1> This page was render direcly from the server <p>Hello there welcome to my website</p></h1></body></html>");
-  });
+});
 
 app.post("/restaurants", (req, res) => {
 
 })
+app.get("/restaurants", (req, res) => {
+  res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
+    //res.send("<html> <head>server Response</head><body><h1> This page was render direcly from the server <p>Hello there welcome to my website</p></h1></body></html>");
+});
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '/projects/first.html'))
