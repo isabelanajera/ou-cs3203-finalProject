@@ -130,6 +130,9 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '/projects/first.html'))
 });
 
+module.exports = app;
+
+
 /*
 <script>
 const form = document.getElementById('form');
