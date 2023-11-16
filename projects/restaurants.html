@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="app.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
     <div class="restaurant-container">
+        <h1>Restaurant Name</h1>
+        <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+        <p>Restaurant Description</p>
+        <h2>Leave a Review!</h2>
+        <form action="http://localhost:3000/restaurants" id = "form"
+            method="POST">
+    <label for = "yourem"> Email</label><br>
+    <input id = "yourem" type="text" name="email" placeholder="Name" required>
+    <label for = "pass"> Password</label><br>
+    <input id = "pass" type="password" name="password" placeholder="Text" required>
+    <input class="subscribe-button" type="submit" value="Log in" >
+  </form>
+
+
+      
+      </div>
+      <div class="restaurant-container">
         <h1>Restaurant Name</h1>
         <img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
         <p>Restaurant Description</p>
