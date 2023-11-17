@@ -61,11 +61,19 @@ color: rgb(98, 143, 228);
 }
 
 .restaurant-container{
-    width : 700px;
+    width: 1000px;
     height : 600px;
-    max-width: 800px;
+    max-width: 1200px;
     max-height: 700;
-    margin: 60px auto;
+    margin: 0 auto;
     background-color: rgba(130, 184, 219, 0.5);
     border: 5px solid rgb(98, 143, 228);
+}
+
+.res-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    grid-gap: 10px;
+    width: 90%;
+    background-color: blueviolet;
 }
