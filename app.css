@@ -27,37 +27,27 @@ color: rgb(98, 143, 228);
     flex: 1 1 250px;
 }
 
-.first-page{
-    width : 700px;
-    height : 600px;
-    max-width: 800px;
-    max-height: 700;
-    margin: 60px auto;
-    background-color: rgba(130, 184, 219, 0.5);
-    border: 5px solid rgb(98, 143, 228);
-}
 
-
-.first-page form input[class = guest]{
-    width : 300px;
-    height : 200px;
+.first-page input[class = guest]{
+    width : 200px;
+    height : 100px;
     margin: 60px auto;
-    background-color: rgba(130, 184, 219, 0.5);
-    border: 5px solid rgb(98, 143, 228);
+    background-color: rgba(216, 20, 72, 0.5);
+    border: 5px solid rgb(0, 0, 0);
 }
-.first-page form input[class = login]{
-    width : 300px;
-    height : 200px;
+.first-page input[class = login]{
+    width : 200px;
+    height : 100px;
     margin: 60px auto;
-    background-color: rgba(130, 184, 219, 0.5);
-    border: 5px solid rgb(98, 143, 228);
+    background-color: rgba(216, 20, 72, 0.5);
+    border: 5px solid rgb(0, 0, 0);
 }
-.first-page form input[class = signup]{
-    width : 300px;
-    height : 200px;
+.first-page input[class = signup]{
+    width : 200px;
+    height : 100px;
     margin: 60px auto;
-    background-color: rgba(130, 184, 219, 0.5);
-    border: 5px solid rgb(98, 143, 228);
+    background-color: rgba(216, 20, 72, 0.5);
+    border: 5px solid rgb(0, 0, 0);
 }
 
 .restaurant-container{
@@ -77,3 +67,44 @@ color: rgb(98, 143, 228);
     width: 90%;
     background-color: blueviolet;
 }
+
+.first-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 10px;
+    width: 100%;
+    background-color:cornsilk;
+    align-items: center;
+}
+
+.background{
+    background-color:cornsilk;
+}
+
+.h1 {
+    width: 80%;
+    color:  rgba(216, 20, 72, 0.5);
+    margin: auto;
+    align-self: center;
+    font-size: 70px;
+}
+
+.p1 {
+    padding-top: 30px;
+    width: 100%;
+    color:  rgba(216, 20, 72, 0.5);
+    margin: auto;
+    align-self: center;
+    font-size: 40px;
+}
+
+.p2 {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    width: 100%;
+    color:  rgba(216, 20, 72, 0.5);
+    margin: auto;
+    align-self: center;
+    font-size: 40px;
+}
+
