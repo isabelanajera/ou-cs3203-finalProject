@@ -87,7 +87,7 @@ app.post("/", (req, res) => {
 */
 
 //The port the app will listen on
-app.listen(PORT, () => console.log(`server running on port ${PORT}`))
+const server = app.listen(PORT, () => console.log(`server running on port ${PORT}`))
 
 app.get("/signup", (req, res) => {
   res.sendFile(path.join(__dirname, '/projects/signup.html'))
@@ -130,7 +130,17 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, '/projects/first.html'))
 });
 
-module.exports = app;
+function closeServer() {
+  server.close((err) => {
+    if (err) {
+      console.error('Error closing the server:', err);
+    } else {
+      console.log('Server closed successfully.');
+    }
+  });
+} 
+
+module.exports = { app, server, closeServer } ;
 
 //test whether github workflow works 1
 /*
