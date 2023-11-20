@@ -2,7 +2,7 @@
 
 const path = require('path');
 const request = require('supertest');
-const app = require(path.join(__dirname, '../server')); // Import your Express.js app
+const { app, server, closeServer } = require(path.join(__dirname, '../server')); // Import your Express.js app
 const assert = require('assert');
 
 
@@ -46,5 +46,10 @@ describe('Restaurant Review API Tests', () => {
 */
   
     // Add more tests as needed for other routes or functionality
+    after((done) => {
+      // Close the server and then call done()
+          closeServer();
+          done(); // Notify Mocha that the after hook is done
+      });
   
   });
