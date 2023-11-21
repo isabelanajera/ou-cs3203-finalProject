@@ -7,8 +7,11 @@
 </head>
 <body class = "background">
 <div class="subscribe-container">
-  <form action="/signup" id = "form" method="POST">
-    <input type="text" name="name" placeholder="Name" required>
+  <form action="/signup" id = "form" method="POST" class = "sub-form">
+    <h1>Create an account below</h1>
+    <label for = "yourem" class = "em-css"> Email:</label><br>
+    <input type="text" name="name" placeholder="Name" required><br>
+    <label for = "pass" class = "pass-css"> Password:</label><br>
     <input type="password" name="password" placeholder="Password" required>
     <input class="subscribe-button" type="submit" value="Sign Up">
   </form>

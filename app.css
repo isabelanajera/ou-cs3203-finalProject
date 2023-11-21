@@ -1,32 +1,56 @@
 .subscribe-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     max-width: 800px;
+    max-height: 600px;
+    width: 500px;
+    height: 500px;
     margin: 60px auto;
-    background-color: rgba(130, 184, 219, 0.5);
-    border: 5px solid rgb(98, 143, 228);
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid rgb(5, 5, 5);
 }
 .subscribe-container form {
-    display: flex;
-    flex-wrap: wrap;
+    padding-bottom: 30px;
 }
-.subscribe-container form input {
+
+.subscribe-container form h1{
+    font-size: 40px;
     margin: 15px;
-    border: 1px solid rgb(98, 143, 228);
+    margin-bottom: 60px;
+}
+
+.subscribe-container form input {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 15px;
+    border: 1px solid rgb(162, 33, 19);
     padding: 0.4rem;
 }
-.subscribe-container form input {
-    flex: 1 1 200px;
-}
+
 
 .subscribe-container form input[type="submit"] {
+    width: 90%;
+    padding: 10%;
+    font-size: 50px;
+    bottom: 0%;
+    padding-top: 30px;
+    padding-bottom: 30px;
     border-radius: 3px;
-    background-color: rgba(17, 228, 10, 0.5);
-color: rgb(98, 143, 228);
+    background-color: rgba(216, 20, 72, 0.5);
 }
 
-.subscribe-container form input[type="email"] {
-    flex: 1 1 250px;
+.subscribe-container form label[class="em-css"] {
+    font-size: 40;
+    margin: 15px;
+    padding-bottom: 30px;
 }
 
+.subscribe-container form label[class="pass-css"] {
+    margin: 15px;
+    font-size: 40;
+    padding-top: 30px;
+}
 
 .first-page input[class = guest]{
     width : 200px;
@@ -51,21 +75,19 @@ color: rgb(98, 143, 228);
 }
 
 .restaurant-container{
-    width: 1000px;
-    height : 600px;
+    margin-bottom: 30px;
+    width: 90%;
+    height : 400px;
     max-width: 1200px;
     max-height: 700;
-    margin: 0 auto;
-    background-color: rgba(130, 184, 219, 0.5);
-    border: 5px solid rgb(98, 143, 228);
+    padding: 10px;
 }
 
 .res-body {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     width: 90%;
-    background-color: blueviolet;
+    margin: 10px;
 }
 
 .first-page {
@@ -79,6 +101,20 @@ color: rgb(98, 143, 228);
 
 .background{
     background-color:cornsilk;
+}
+
+.restaurant-container h1{
+    font-size: 50px;
+    color: crimson;
+}
+
+.restaurant-container input[type = text]{
+    width: 90%;
+    height: 100px;
+}
+
+.restaurant-container p{
+    font-size: 25px;
 }
 
 .h1 {
