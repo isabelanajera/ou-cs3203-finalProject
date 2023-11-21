@@ -36,7 +36,8 @@
     bottom: 0%;
     padding-top: 30px;
     padding-bottom: 30px;
-    border-radius: 3px;
+    border-radius: 5px;
+    border: 5px solid rgb(5, 5, 5);
     background-color: rgba(216, 20, 72, 0.5);
 }
 
@@ -75,20 +76,14 @@
 }
 
 .restaurant-container{
-    margin-bottom: 30px;
-    width: 90%;
-    height : 400px;
-    max-width: 1200px;
+    width: 100%;
+    height : 600px;
+    max-width: 1000px;
     max-height: 700;
     padding: 10px;
+
 }
 
-.res-body {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    width: 90%;
-    margin: 10px;
-}
 
 .first-page {
     display: grid;
@@ -142,5 +137,11 @@
     margin: auto;
     align-self: center;
     font-size: 40px;
+}
+
+#wrapper {
+    margin-left:auto;
+    margin-right:auto;
+    width:960px;
 }
 
