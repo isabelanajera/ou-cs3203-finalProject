@@ -37,6 +37,7 @@ con.connect(function(err) {
 */
 
 const path = require('path');
+const { rmSync } = require('fs');
 
 
 const PORT = process.env.PORT || 3000
@@ -93,7 +94,8 @@ app.post("/", (req, res) => {
 const server = app.listen(PORT, () => console.log(`server running on port ${PORT}`))
 
 app.get("/signup", (req, res) => {
-  res.sendFile(path.join(__dirname, '/projects/signup.html'))
+  //res.sendFile(path.join(__dirname, '/projects/signup.html'))
+  res.render("signup")
 })
 
 app.post("/signup", (req, res) => {
@@ -102,7 +104,8 @@ app.post("/signup", (req, res) => {
   const password = req.body.password
   users.push(email)
   currentUser = email
-  res.sendFile(path.join(__dirname, '/projects/first.html'))
+  res.render("first")
+  //res.sendFile(path.join(__dirname, '/projects/first.html'))
 
 })
 app.post("/login", (req, res) => {
@@ -113,7 +116,8 @@ app.post("/login", (req, res) => {
     console.log(currentUser)
     console.log(input)
 
-    res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
+    res.render("restaurants")
+    //res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
   }
   else{
     //res.sendFile(path.join(__dirname, '/projects/login.html'))
@@ -135,12 +139,14 @@ app.post("/restaurants", (req, res) => {
   //ADD QUERY for posting a review 
 })
 app.get("/restaurants", (req, res) => {
-  res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
+  res.render("restaurants")
+  //res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
     //res.send("<html> <head>server Response</head><body><h1> This page was render direcly from the server <p>Hello there welcome to my website</p></h1></body></html>");
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, '/projects/first.html'))
+  res.render("first")
+  //res.sendFile(path.join(__dirname, '/projects/first.html'))
 });
 
 function closeServer() {
