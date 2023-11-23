@@ -1,0 +1,36 @@
+<html lang="en"> 
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="app.css">
+  <title>html form</title>
+</head>
+<body class = "background">
+    <div class = "h2-test">
+<div class="subscribe-container">
+  <form action="/login" id = "form"
+  method="POST">
+  <div>
+    
+    <h1>Welcome back!</h1>
+    <label for = "yourem" class = "em-css"> Email:</label><br>
+    <input id = "yourem" type="text" name="email" placeholder="Name" required><br>
+    <label for = "pass" class = "pass-css"> Password:</label><br>
+    <input id = "pass" type="password" name="password" placeholder="Text" required>
+  </div>
+  <div>
+    <input class="subscribe-button" type="submit" value="Log in" >
+  </div>
+  </form>
+
+</div>
+<h2> <%= status %> </h2>
+</div>
+
+
+<script src="server.js"></script>
+
+</body>
+
+</html>
