@@ -12,29 +12,6 @@ let currentUser = "";
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-/*
-var con = mysql.createConnection({
-  host: "prid0006.database.windows.net",
-  dbname: "cs-dsa-4513-sql-db",
-  user: "prid0006",
-  password: "LBarnes01"
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
-
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-  con.query(sql, function (err, result) {
-    if (err) throw err;
-    console.log("Result: " + result);
-  });
-});
-*/
 
 const path = require('path');
 const { rmSync } = require('fs');
@@ -46,13 +23,13 @@ const PORT = process.env.PORT || 3000
 
 app.use(express.static(__dirname));
 
-/*
+
 const sql = require('mssql');
 
 const config = {
     user: 'prid0006', // better stored in an app setting such as process.env.DB_USER
     password: 'LBarnes01', // better stored in an app setting such as process.env.DB_PASSWORD
-    server: 'rid0006.database.windows.ne', // better stored in an app setting such as process.env.DB_SERVER
+    server: 'prid0006.database.windows.net', // better stored in an app setting such as process.env.DB_SERVER
     port: 1433, // optional, defaults to 1433, better stored in an app setting such as process.env.DB_PORT
     database: 'cs-dsa-4513-sql-db', // better stored in an app setting such as process.env.DB_NAME
     authentication: {
@@ -98,7 +75,7 @@ app.get("/signup", (req, res) => {
   res.render("signup")
 })
 
-app.post("/signup", (req, res) => {
+app.post("/signup", async(req, res) => {
   //CHANGE this to QUERY the database to put info
   const email = req.body.name
   const password = req.body.password
@@ -106,17 +83,41 @@ app.post("/signup", (req, res) => {
   currentUser = email
   res.render("first")
   //res.sendFile(path.join(__dirname, '/projects/first.html'))
+    //This is beginning.
+    try {
+        await sql.connect(config);
+        const query = `INSERT INTO login VALUES newUser @username = '${email}', @password = '${password}'`;
 
-})
-app.post("/login", (req, res) => {
+        // Execute the stored procedure
+        const result = await sql.query(query);
+        //This is his
+        users.push(email)
+        currentUser = email
+        res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
+    }
+    catch (err) {
+        console.error('Error executing stored procedure:', err);
+        res.status(500).send('Internal Server Error');
+    } finally {
+        // Close the database connection
+        await sql.close();
+    }
+});
+//New end, sort of
+//})
+app.post("/login", async(req, res) => {
 
   //CHANGE this to QUERY the database for the info
-  const input = req.body.email
-  if(users.includes(input)){
+    const input = req.body.email
+    const password = req.body.password
+    try {
+        await sql.connect(config);
+        const result = await sql.query(
+            `SELECT * FROM login WHERE login_id = '${input}' AND password = '${password}'`);
+        if (users.includes(input) && result.recordset.length > 0){
     console.log(currentUser)
     console.log(input)
-
-    res.render("restaurants")
+      res.render("restaurants")
     //res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
   }
   else{
@@ -127,16 +128,27 @@ app.post("/login", (req, res) => {
     //res.status(400).send("USER NOT FOUND")
 
     //window.onload()
-  }
-  });
+        }
+    } catch (err) {
+        console.error('Error executing SQL query:', err);
+        res.status(500).send('Internal Server Error');
+    } finally {
+        await sql.close();
+    }
+});
+
 app.get("/login", (req, res) => {
   //res.sendFile(path.join(__dirname, '/projects/login.html'))
   res.render("login", {status : ""})
     //res.send("<html> <head>server Response</head><body><h1> This page was render direcly from the server <p>Hello there welcome to my website</p></h1></body></html>");
 });
 
+
 app.post("/restaurants", (req, res) => {
-  //ADD QUERY for posting a review 
+  //ADD QUERY for posting a review
+
+
+
 })
 app.get("/restaurants", (req, res) => {
   res.render("restaurants")
