@@ -86,8 +86,7 @@ app.post("/signup", async(req, res) => {
     //This is beginning.
     try {
         await sql.connect(config);
-        const query = `INSERT INTO login VALUES newUser @username = '${email}', @password = '${password}'`;
-
+        const query = `EXEC newUser @username = '${email}', @password = '${password}'`;
         // Execute the stored procedure
         const result = await sql.query(query);
         //This is his
@@ -95,9 +94,10 @@ app.post("/signup", async(req, res) => {
         currentUser = email
         res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
     }
+
     catch (err) {
         console.error('Error executing stored procedure:', err);
-        res.status(500).send('Internal Server Error');
+        //res.status(500).send('Internal Server Error');
     } finally {
         // Close the database connection
         await sql.close();
@@ -114,9 +114,10 @@ app.post("/login", async(req, res) => {
         await sql.connect(config);
         const result = await sql.query(
             `SELECT * FROM login WHERE login_id = '${input}' AND password = '${password}'`);
-        if (users.includes(input) && result.recordset.length > 0){
-    console.log(currentUser)
-    console.log(input)
+        if (result.recordset.length > 0){
+   // console.log(currentUser)
+    //console.log(input)
+
       res.render("restaurants")
     //res.sendFile(path.join(__dirname, '/projects/restaurants.html'))
   }
