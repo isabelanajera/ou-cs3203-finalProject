@@ -162,3 +162,9 @@
     width: 100%;
     text-align: center;
 }
+
+.restaurant-container[class = "reviews"]{
+    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}

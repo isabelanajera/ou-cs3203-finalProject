@@ -6,15 +6,25 @@
   <title>html form</title>
 </head>
 <body class = "background">
+      <div class = "h2-test">
+
 <div class="subscribe-container">
   <form action="/signup" id = "form" method="POST" class = "sub-form">
+    <div>
     <h1>Create an account below</h1>
     <label for = "yourem" class = "em-css"> Email:</label><br>
     <input type="text" name="name" placeholder="Name" required><br>
     <label for = "pass" class = "pass-css"> Password:</label><br>
     <input type="password" name="password" placeholder="Password" required>
+  </div>
+  <div>
     <input class="subscribe-button" type="submit" value="Sign Up">
+  </div>
   </form>
 </div>
+<h2> <%= status %> </h2>
+</div>
+<script src="server.js"></script>
+
 </body>
 </html>
