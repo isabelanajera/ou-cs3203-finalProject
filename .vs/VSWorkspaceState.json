@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\projects",
+    "\\views"
   ],
-  "SelectedNode": "\\C:\\Users\\sprid\\Source\\Repos\\ou-cs3203-finalProjectReal",
+  "SelectedNode": "\\server.js",
   "PreviewInSolutionExplorer": false
 }

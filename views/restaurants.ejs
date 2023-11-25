@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body class = "background">
-  <div class = "res-body">
+  <div id = "wrapper" class = "res-body">
     <div id = "wrapper" class="restaurant-container">
       <h1>Hideaway Pizza</h1>
       <img src="/restaurant_imgs/hideaway1.jpeg" alt="Hideaway Picture" width="300" height="300">
@@ -19,14 +19,16 @@
         out of the wide variety of toppings they have available.
         </p>
       <div class = "reviews">
-        <p> <%= hp1 %></p>
-        <p> <%= hp2 %></p>
-        <p> <%= hp3 %></p>
+               <p> <%= hp1 %> <%= hp11 %></p>
+               <p> <%= hp2 %> <%= hp12 %></p>
+               <p> <%= hp3 %> <%= hp13 %></p>
       </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Hideaway" hidden>
+        <label for="reviewHideaway"> </label>
       </form> 
     </div>
     <div id = "wrapper" class="restaurant-container">
@@ -38,14 +40,16 @@
               Canes offers many combos for your chicken needs.
             </p>
             <div class = "reviews">
-              <p> <%= cp1 %> -<%= cp11 %></p>
-              <p> <%= cp2 %> -<%= cp12 %></p>
-              <p> <%= cp3 %> -<%= cp13 %></p>
+              <p> <%= cp1 %> <%= cp11 %></p>
+              <p> <%= cp2 %> <%= cp12 %></p>
+              <p> <%= cp3 %> <%= cp13 %></p>
             </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Canes" hidden>
+        <label for="reviewCanes"> </label>
       </form> 
     </div>
 
@@ -58,14 +62,16 @@
               Unlike other restaurants that serve tacos, Fuzzy's
             has some of the craziest combinations.</p>
             <div class = "reviews">
-              <p> <%= fp1 %> -<%= fp11 %></p>
-              <p> <%= fp2 %> -<%= fp12 %></p>
-              <p> <%= fp3 %> -<%= fp13 %></p>
+              <p> <%= fp1 %> <%= fp11 %></p>
+              <p> <%= fp2 %> <%= fp12 %></p>
+              <p> <%= fp3 %> <%= fp13 %></p>
             </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Fuzzys" hidden>
+        <label for="reviewFuzzys"> </label>
       </form> 
     </div>
 
@@ -79,14 +85,16 @@
               Grab some pho on a cold day, to warm you right up.
             </p>
             <div class = "reviews">
-              <p> <%= pp1 %> -<%= pp11 %></p>
-              <p> <%= pp2 %> -<%= pp12 %></p>
-              <p> <%= pp3 %> -<%= pp13 %></p>
+              <p> <%= pp1 %> <%= pp11 %></p>
+              <p> <%= pp2 %> <%= pp12 %></p>
+              <p> <%= pp3 %> <%= pp13 %></p>
             </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Pho House" hidden>
+        <label for="reviewPho"> </label>
       </form> 
     </div>
 
@@ -99,14 +107,16 @@
             <p>A long-standing campus favorite, Pickleman's offers sandwiches, salads,
                and so much more. </p>
                <div class = "reviews">
-                <p> <%= pip1 %> -<%= pip11 %></p>
-                <p> <%= pip2 %> -<%= pip12 %></p>
-                <p> <%= pip3 %> -<%= pip13 %></p>
+                <p> <%= pip1 %> <%= pip11 %></p>
+                <p> <%= pip2 %> <%= pip12 %></p>
+                <p> <%= pip3 %> <%= pip13 %></p>
               </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Picklemans" hidden>
+        <label for="reviewPicklemans"> </label>
       </form> 
     </div>
 
@@ -121,14 +131,16 @@
               boba teas and Asian-fusion dishes.
             </p>
             <div class = "reviews">
-              <p> <%= tp1 %> -<%= tp11 %></p>
-              <p> <%= tp2 %> -<%= tp12 %></p>
-              <p> <%= tp3 %> -<%= tp13 %></p>
+              <p> <%= tp1 %> <%= tp11 %></p>
+              <p> <%= tp2 %> <%= tp12 %></p>
+              <p> <%= tp3 %> <%= tp13 %></p>
             </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Tea Cafe" hidden>
+        <label for="reviewTea"> </label>
       </form> 
     </div>
 
@@ -142,14 +154,16 @@
                favorite sports while enjoying a meal.
             </p>
             <div class = "reviews">
-              <p> <%= lp1 %> -<%= lp11 %></p>
-              <p> <%= lp2 %> -<%= lp12 %></p>
-              <p> <%= lp3 %> -<%= lp13 %></p>
+              <p> <%= lp1 %> <%= lp11 %></p>
+              <p> <%= lp2 %> <%= lp12 %></p>
+              <p> <%= lp3 %> <%= lp13 %></p>
             </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Louies" hidden>
+        <label for="reviewLouies"> </label>
       </form> 
     </div>
 
@@ -163,14 +177,16 @@
               love fro-yo with all those toppings?
             </p>
             <div class = "reviews">
-              <p> <%= pinp1 %> -<%= pinp11 %></p>
-              <p> <%= pinp2 %> -<%= pinp12 %></p>
-              <p> <%= pinp3 %> -<%= pinp13 %></p>
+              <p> <%= pinp1 %> <%= pinp11 %></p>
+              <p> <%= pinp2 %> <%= pinp12 %></p>
+              <p> <%= pinp3 %> <%= pinp13 %></p>
             </div>
       <form action="http://localhost:2000/restaurants" id = "form"
             method="POST">
         <input id = "yourem" type="text" name="email" placeholder="Leave a review" required><br>
         <input type="submit" value="Post" >
+        <input type="text" name="restaurant" value="Pink Berry" hidden>
+        <label for="reviewPink"> </label>
       </form> 
     </div>
 
